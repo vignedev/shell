@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# shush dont do shit
+exit 0
+
 set -ex
 
 shortcut_applied() {
@@ -104,7 +107,7 @@ if ! command -v gnome-extensions >/dev/null; then
     exit 1
 fi
 
-set_keybindings
+#set_keybindings
 
 # Use a window placement behavior which works better for tiling
 

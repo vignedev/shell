@@ -59,6 +59,8 @@ listen:
 
 local-install: depcheck compile install configure enable restart-shell
 
+vigne-install: depcheck compile install enable
+
 install:
 	rm -rf $(INSTALLBASE)/$(INSTALLNAME)
 	mkdir -p $(INSTALLBASE)/$(INSTALLNAME) $(PLUGIN_BASE) $(SCRIPTS_BASE)
