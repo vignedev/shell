@@ -61,6 +61,8 @@ listen:
 
 vigne-install: depcheck compile install enable
 
+vigne-install: depcheck compile install enable
+
 install:
 	rm -rf $(INSTALLBASE)/$(INSTALLNAME)
 	mkdir -p $(INSTALLBASE)/$(INSTALLNAME) $(PLUGIN_BASE) $(SCRIPTS_BASE)
