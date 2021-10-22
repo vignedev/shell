@@ -57,7 +57,7 @@ disable:
 listen:
 	journalctl -o cat -n 0 -f "$$(which gnome-shell)" | grep -v warning
 
-local-install: depcheck compile install configure enable restart-shell
+# local-install: depcheck compile install configure enable restart-shell
 
 vigne-install: depcheck compile install enable
 
