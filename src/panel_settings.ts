@@ -55,14 +55,14 @@ export class Indicator {
             }
         )
 
-        this.entry_gaps = number_entry(
+        /*this.entry_gaps = number_entry(
             _("Gaps"),
             ext.settings.gap_inner(),
             (value) => {
                 ext.settings.set_gap_inner(value);
                 ext.settings.set_gap_outer(value);
             }
-        )
+        )*/
 
         bm.addMenuItem(this.toggle_tiled);
         bm.addMenuItem(floating_window_exceptions(ext, bm));
@@ -82,7 +82,29 @@ export class Indicator {
         // CSS Selector
         bm.addMenuItem(color_selector(ext, bm),);
 
-        bm.addMenuItem(this.entry_gaps)
+        //bm.addMenuItem(this.entry_gaps)
+
+        bm.addMenuItem(
+            number_entry(
+                _("Inner Gaps"),
+                ext.settings.gap_inner(),
+                (value) => {
+                    ext.settings.set_gap_inner(value);
+                    //ext.settings.set_gap_outer(value);
+                }
+            )
+        )
+
+        bm.addMenuItem(
+            number_entry(
+                _("Outer Gaps"),
+                ext.settings.gap_outer(),
+                (value) => {
+                    //ext.settings.set_gap_inner(value);
+                    ext.settings.set_gap_outer(value);
+                }
+            )
+        )
     }
 
     destroy() {
