@@ -1,3 +1,9 @@
+# Disclaimer
+
+This fork is purely for personal reasons to fit my workflow and habits.
+
+---
+
 # Pop Shell
 
 Pop Shell is a keyboard-driven layer for GNOME Shell which allows for quick and sensible navigation and management of windows. The core feature of Pop Shell is the addition of advanced tiling window management — a feature that has been highly sought within our community. For many — ourselves included — i3wm has become the leading competitor to the GNOME desktop.
