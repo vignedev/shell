@@ -81,6 +81,13 @@ export class Indicator {
 
         // CSS Selector
         bm.addMenuItem(color_selector(ext, bm),);
+        bm.addMenuItem(
+            number_entry(
+                _("Border Radius"),
+                ext.settings.hint_border_radius(),
+                (value) => ext.settings.set_hint_border_radius(value)
+            )
+        )
 
         //bm.addMenuItem(this.entry_gaps)
 

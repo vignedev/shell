@@ -226,6 +226,10 @@
             <default>'rgba(251, 184, 108, 1)'</default>
             <summary>The current active-hint-color in RGBA</summary>
         </key>
+        <key type="u" name="hint-border-radius">
+            <default>5</default>
+            <summary>Border radius of active hint</summary>
+        </key>
         <key type="u" name="log-level">
             <default>0</default>
             <summary>
