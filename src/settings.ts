@@ -57,6 +57,7 @@ const SMART_GAPS = "smart-gaps";
 const SNAP_TO_GRID = "snap-to-grid";
 const TILE_BY_DEFAULT = "tile-by-default";
 const HINT_COLOR_RGBA = "hint-color-rgba";
+const HINT_BORDER_RADIUS = "hint-border-radius";
 const DEFAULT_RGBA_COLOR = "rgba(251, 184, 108, 1)"; //pop-orange
 const LOG_LEVEL = "log-level";
 const SHOW_SKIPTASKBAR = "show-skip-taskbar";
@@ -98,6 +99,10 @@ export class ExtensionSettings {
         }
 
         return rgba;
+    }
+
+    hint_border_radius() {
+        return this.ext.get_uint(HINT_BORDER_RADIUS);
     }
 
     theme(): string {
@@ -177,6 +182,10 @@ export class ExtensionSettings {
         } else {
             this.ext.set_string(HINT_COLOR_RGBA, DEFAULT_RGBA_COLOR);
         }
+    }
+
+    set_hint_border_radius(radius: number) {
+        this.ext.set_uint(HINT_BORDER_RADIUS, radius);
     }
 
     set_row_size(size: number) {
