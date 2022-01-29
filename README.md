@@ -1,6 +1,11 @@
 # Disclaimer
 
-This fork is purely for personal reasons to fit my workflow and habits.
+This fork is purely for personal reasons to fit my workflow and habits. These are the changes that are present here:
+
+* Ability to change Outer/Inner gaps independently from the status bar
+* `make install` replaced with `make vigne-install`, which performs installation without overwriting user's keyboard shortcuts and just installs the extension
+* Changes stack tab bar color scheme
+* Ability to change border radius of active hint rectangle
 
 ---
 
