@@ -58,6 +58,7 @@ const SNAP_TO_GRID = "snap-to-grid";
 const TILE_BY_DEFAULT = "tile-by-default";
 const HINT_COLOR_RGBA = "hint-color-rgba";
 const HINT_BORDER_RADIUS = "hint-border-radius";
+const STACK_BORDER_RADIUS_OFFSET = "stack-border-radius-offset";
 const DEFAULT_RGBA_COLOR = "rgba(251, 184, 108, 1)"; //pop-orange
 const LOG_LEVEL = "log-level";
 const SHOW_SKIPTASKBAR = "show-skip-taskbar";
@@ -103,6 +104,10 @@ export class ExtensionSettings {
 
     hint_border_radius() {
         return this.ext.get_uint(HINT_BORDER_RADIUS);
+    }
+
+    stack_border_radius_offset() {
+        return this.ext.get_uint(STACK_BORDER_RADIUS_OFFSET);
     }
 
     theme(): string {
@@ -186,6 +191,10 @@ export class ExtensionSettings {
 
     set_hint_border_radius(radius: number) {
         this.ext.set_uint(HINT_BORDER_RADIUS, radius);
+    }
+
+    set_stack_border_radius_offset(offset: number) {
+        this.ext.set_uint(STACK_BORDER_RADIUS_OFFSET, offset);
     }
 
     set_row_size(size: number) {
