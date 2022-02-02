@@ -181,7 +181,6 @@ export class Stack {
                     else
                         final_style += `border-radius: 0px;`;
 
-                    button.set_label(final_style)
                     button.set_style(final_style)
                 }
             })
