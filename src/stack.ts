@@ -174,16 +174,29 @@ export class Stack {
                 let button = this.buttons.get(component.button);
                 if (button) {
                     button.set_style_class_name(name);
-                    let tab_color = '';
-                    /*if (component.active) {
-                        let settings = this.ext.settings;
-                        let color_value = settings.hint_color_rgba();
-                        tab_color = `background: ${color_value}; color: ${utils.is_dark(color_value) ? 'white' : 'black'}`;
+                    let final_style = ''
+                    let settings = this.ext.settings;
 
+                    // TODO: reenable this section with HSV calculation
+                    /*if (component.active) {
+                        let color_value = settings.hint_color_rgba();
+                        final_style += `background: ${color_value}; color: ${utils.is_dark(color_value) ? 'white' : 'black'};`;
                     } else {
-                        tab_color = `background: ${INACTIVE_TAB_STYLE}`;
+                        final_style += `background: ${INACTIVE_TAB_STYLE};`;
                     }*/
-                    button.set_style(tab_color);
+
+                    // FIXME: this is not getting updated automatically, requires
+                    // reclick to restyle (no events connected to)
+                    let hint_border_radius = Math.max(0, settings.hint_border_radius() - settings.stack_border_radius_offset())
+                    if(id == 0)
+                        final_style += `border-radius: ${hint_border_radius}px 0px 0px ${hint_border_radius}px;`;
+                    else if(id == this.tabs.length - 1)
+                        final_style += `border-radius: 0px ${hint_border_radius}px ${hint_border_radius}px 0px;`;
+                    else
+                        final_style += `border-radius: 0px;`;
+
+                    button.set_label(final_style)
+                    button.set_style(final_style)
                 }
             })
 

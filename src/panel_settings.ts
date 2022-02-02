@@ -88,6 +88,13 @@ export class Indicator {
                 (value) => ext.settings.set_hint_border_radius(value)
             )
         )
+        bm.addMenuItem(
+            number_entry(
+                _("Stack Border Radius Offset"),
+                ext.settings.stack_border_radius_offset(),
+                (value) => ext.settings.set_stack_border_radius_offset(value)
+            )
+        )
 
         //bm.addMenuItem(this.entry_gaps)
 
