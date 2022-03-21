@@ -137,7 +137,7 @@ export class ShellWindow {
         let settings = this.ext.settings;
         let change_id = settings.ext.connect('changed', (_, key) => {
             if (this.border) {
-                if (key === 'hint-color-rgba' || key === 'hint-border-radius') {
+                if (key === 'hint-color-rgba' || key === 'hint-border-radius' || key == 'hint-border-width') {
                     this.update_hint_colors();
                 }
             }
@@ -161,6 +161,7 @@ export class ShellWindow {
         let settings = this.ext.settings;
         const color_value = settings.hint_color_rgba();
         const border_radius = settings.hint_border_radius();
+        const border_width = settings.hint_border_width();
 
         if (this.ext.overlay) {
             const gdk = new Gdk.RGBA();
@@ -183,6 +184,7 @@ export class ShellWindow {
             this.border.set_style(`
                 border-color: ${color_value};
                 border-radius: ${border_radius}px;
+                border-width: ${border_width}px;
             `);
         
     }
