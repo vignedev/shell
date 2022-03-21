@@ -16,6 +16,7 @@ export class Indicator {
     toggle_tiled : any
     toggle_titles: null | any
     toggle_active: any
+    toggle_mouse_focus: any
 
     entry_gaps: any
 
@@ -119,6 +120,15 @@ export class Indicator {
                 }
             )
         )
+
+        this.toggle_mouse_focus = toggle(
+            _("Enable mouse focus"),
+            ext.settings.focus_mode() == 'mouse' || ext.settings.focus_mode() == 'sloppy',
+            (toggle) => {
+                ext.settings.set_focus_mode(toggle.state ? 'mouse' : 'click');
+            }
+        )
+        bm.addMenuItem(this.toggle_mouse_focus)
     }
 
     destroy() {

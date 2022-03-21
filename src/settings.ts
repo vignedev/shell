@@ -68,6 +68,7 @@ export class ExtensionSettings {
     int: Settings | null = settings_new_id("org.gnome.desktop.interface");
     mutter: Settings | null = settings_new_id("org.gnome.mutter");
     shell: Settings | null = settings_new_id("org.gnome.shell.extensions.user-theme");
+    wm: Settings | null = settings_new_id("org.gnome.desktop.wm.preferences");
 
     // Getters
 
@@ -161,6 +162,10 @@ export class ExtensionSettings {
         return this.ext.get_boolean(SHOW_SKIPTASKBAR);
     }
 
+    focus_mode(): string | null { 
+        return this.wm?.get_string("focus-mode") || null
+    }
+
     // Setters
 
     set_active_hint(set: boolean) {
@@ -223,5 +228,9 @@ export class ExtensionSettings {
 
     set_show_skiptaskbar(set: boolean) {
         this.ext.set_boolean(SHOW_SKIPTASKBAR, set);
+    }
+
+    set_focus_mode(set: string) {
+        this.wm?.set_string("focus-mode", set);
     }
 }
