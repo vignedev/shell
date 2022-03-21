@@ -84,6 +84,15 @@ export class Indicator {
         bm.addMenuItem(color_selector(ext, bm),);
         bm.addMenuItem(
             number_entry(
+                _("Active Hint Border Width"),
+                ext.settings.hint_border_width(),
+                (value) => {
+                    ext.settings.set_hint_border_width(value);
+                }
+            )
+        )
+        bm.addMenuItem(
+            number_entry(
                 _("Border Radius"),
                 ext.settings.hint_border_radius(),
                 (value) => ext.settings.set_hint_border_radius(value)

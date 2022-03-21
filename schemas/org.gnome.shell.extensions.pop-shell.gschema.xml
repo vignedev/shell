@@ -230,6 +230,10 @@
             <default>5</default>
             <summary>Border radius of active hint</summary>
         </key>
+        <key type="u" name="hint-border-width">
+            <default>3</default>
+            <summary>Border width of active hint</summary>
+        </key>
         <key type="u" name="stack-border-radius-offset">
             <default>0</default>
             <summary>Offset the border-radius from hint-border-radius</summary>
